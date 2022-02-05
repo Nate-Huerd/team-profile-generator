@@ -1,0 +1,16 @@
+/* Universal styling start */
+:root {
+    --primary-color: #
+    --secondary-color: #
+    --tertiary-color: #
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+/*Universal styling end*/
+
+.title {
+    text-align: center;
+    font-style: bold;
+}
