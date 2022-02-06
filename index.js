@@ -201,3 +201,64 @@ const addIntern = () => {
         },
     ])
 };
+
+const addEmployee = () => {
+    return inquirer.prompt ([
+        {
+            // name
+            type: 'input',
+            name: 'name',
+            message: "Please list the employee's name",
+
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please list the employee's name");
+                    return false;
+                }
+            }
+
+        },
+        {
+            // id
+            type: 'input',
+            name: 'id',
+            message: "Please enter the employee's ID",
+
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please list the employee's ID");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter the employee's email address",
+
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the employee's email address");
+                    return false;
+                }
+            }
+        },
+    ])
+};
+
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return('Error');
+        } else {
+            console.log('Team profile has been created.')
+        }
+    })
+};
