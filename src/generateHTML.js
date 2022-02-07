@@ -50,4 +50,8 @@ const generateIntern = function (intern) {
             </div>
         </div>
     `;
+};
+
+generateHTML = (data) => {
+    // add array?
 }
