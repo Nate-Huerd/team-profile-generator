@@ -135,9 +135,8 @@ const addEngineer = () => {
                 }
             }
         },
-    ])
+    ])   
 };
-
 const addIntern = () => {
     return inquirer.prompt ([
         {
