@@ -53,6 +53,7 @@ const generateTeam = team => {
             </div>
         `;
     };
+}
 
 // export the team and generate the HTML page
 module.exports = team => {

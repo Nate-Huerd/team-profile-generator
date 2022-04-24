@@ -2,6 +2,7 @@ const generateHTML = require('./src/generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const intern = require('./lib/Intern');
+const path = require('path');
 
 // node modules
 const fs = require('fs');
