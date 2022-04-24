@@ -1,73 +1,102 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
-    <head>
-        <!-- optimized for mobile -->
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-        <title>My Team</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
+</head>
 
-    <body>
-        <!-- header start -->
-        <header class="title" id="Title"></header>
-            <h1>My Team</h1>
-        <!-- header end -->
-        <main>
-            <!-- create cards for profiles -->
-            <div class="container">
-                <div class="col-4">
-                    <div class="card-header">
-                        <h3 class="employee-name"></h3>
-                        <h4>Manager</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="employee-id"></p>
-                        <p class="employee-email">Email: <a href="mailto: email@email.com">Send Email</a></p>
-                        <p class="manager-office"></p>
-                    </div>
-                </div>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 jumbotron mb-3 team-heading">
+                <h1 class="text-center">My Team</h1>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                <div class="card employee-card">
+    <!-- employee 1 -->
+    <div class="card-header">
+        <h2 class="card-title">Jared</h2>
+        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 1</li>
+            <li class="list-group-item">Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
+            <li class="list-group-item">Office number: 1</li>
+        </ul>
+    </div>
+</div>
+<div class="card employee-card">
+<!-- employee 2 -->
+    <div class="card-header">
+        <h2 class="card-title">Alec</h2>
+        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 2</li>
+            <li class="list-group-item">Email: <a href="mailto:alec@fakemail.com">alec@fakemail.com</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/fakegithubaccount" target="_blank" rel="noopener noreferrer">ibealec</a></li>
+        </ul>
+    </div>
+</div>
+<div class="card employee-card">
+<!-- employee 3 -->
+    <div class="card-header">
+        <h2 class="card-title">Grace</h2>
+        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 3</li>
+            <li class="list-group-item">Email: <a href="mailto:grace@fakemail.com">grace@fakemail.com</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/fakegithubaccount" target="_blank" rel="noopener noreferrer">gchoi2u</a></li>
+        </ul>
+    </div>
+</div>
+<div class="card employee-card">
+<!-- employee 4 -->
+    <div class="card-header">
+        <h2 class="card-title">Tammer</h2>
+        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 4</li>
+            <li class="list-group-item">Email: <a href="mailto:tammer@fakemail.com">tammer@fakemail.com</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/fakegithubaccount" target="_blank" rel="noopener noreferrer">tammerg</a></li>
+        </ul>
+    </div>
+</div>
+<div class="card employee-card">
+<!-- employee 5 -->
+    <div class="card-header">
+        <h2 class="card-title">John</h2>
+        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 5</li>
+            <li class="list-group-item">Email: <a href="mailto:john@fakemail.com">john@fakemail.com</a></li>
+            <li class="list-group-item">School: 2University</li>
+        </ul>
+    </div>
+</div>
 
-            <div class="container">
-                <div class="col-4">
-                    <div class="card-header">
-                        <h3 class="employee-name"></h3>
-                        <h4>Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="employee-id"></p>
-                        <p class="employee-email">Email: <a href="mailto: email@email.com">Send Email</a></p>
-                        <p class="engineer-github"></p>
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
+</body>
 
-            <div class="container">
-                <div class="col-4">
-                    <div class="card-header">
-                        <h3 class="employee-name"></h3>
-                        <h4>Intern</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="employee-id"></p>
-                        <p class="employee-email">Email: <a href="mailto: email@email.com">Send Email</a></p>
-                        <p class="intern-school"></p>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-
-
-
-        <!-- footer start-->
-        <footer class="footer">
-            <h4>For more information about our team, please contact visit us at www.company.com/team-profiles</h4>
-        </footer>
-    </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
