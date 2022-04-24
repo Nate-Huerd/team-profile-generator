@@ -8,6 +8,17 @@ const path = require('path');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+// output directory
+const OUTPUT_DIR = path.resolve(__dirname, 'outpu')
+const outputPath = path.join(OUTPUT_DIR, 'team.html');
+
+// render template
+const render = require('./src/generateHTML.js');
+
+// arrays for teamMembers and id
+const teamMembers = [];
+const idArray = [];
+
 // list prompts for mgr., eng., and int.
 // Need name, id, and email (and office # for mgr's) (and github for eng.) (and school for interns)
 
@@ -262,3 +273,5 @@ const writeFile = data => {
         }
     })
 };
+
+// work on index.js and generateHTML
