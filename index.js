@@ -22,6 +22,52 @@ const idArray = [];
 // list prompts for mgr., eng., and int.
 // Need name, id, and email (and office # for mgr's) (and github for eng.) (and school for interns)
 
+function appMenu() {
+    function createManager() {
+        console.log('Create team');
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'managerName',
+                message: "Please enter the team manager's name",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true,
+                    }
+                    return "Please list the team manager's name";
+                }
+            },
+            {
+                type: 'input',
+                name: 'managerId',
+                message: "Please enter the team manager's ID",
+                validate: answer => {
+                    const pass = answer.match(
+                        // add regular expression for verification
+                        /^[1-9]\d*$/
+                    );
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please list the team manager's ID";
+                }
+            },
+            {
+                
+            }
+        ])
+    }
+}
+
+
+
+
+
+
+
+
+
+/* start of mine
 const addManager = () => {
     return inquirer.prompt ([
         {
@@ -274,4 +320,4 @@ const writeFile = data => {
     })
 };
 
-// work on index.js and generateHTML
+end of mine */
