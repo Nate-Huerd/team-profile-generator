@@ -113,7 +113,46 @@ function appMenu() {
             }
         });
     }
-    
+
+    // addEngineer function
+    function addEngineer() {
+        // inquirer prompt here
+        inquirer.prompt ([
+            {
+                type: 'input',
+                name: 'engineerName',
+                message: 'Please enter the name of the engineer',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter the engineer's name";
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerId',
+                message: "Please enter the engineer's id",
+                validate: answer => {
+                    // validation
+                    const pass = answer.match(/^[1-9]\d*$/);
+                    if (pass) {
+                        // check if the ID exists. If so, return message.
+                        if(idArray.includes(answer)) {
+                            return 'This ID is taken, please enter a new ID';
+                        } else {
+                            return true;
+                        }
+                    }
+                    // if it does not pass
+                    return 'Please enter a valid ID';
+                }
+            },
+            {
+                
+            }
+        ])
+    }
 }
 
 
