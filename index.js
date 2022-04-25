@@ -42,10 +42,8 @@ function appMenu() {
                 name: 'managerId',
                 message: "Please enter the team manager's ID",
                 validate: answer => {
-                    const pass = answer.match(
-                        // add regular expression for verification
-                        /^[1-9]\d*$/
-                    );
+                    // add regular expression for validation
+                    const pass = answer.match(/^[1-9]\d*$/);
                     if (pass) {
                         return true;
                     }
@@ -53,9 +51,35 @@ function appMenu() {
                 }
             },
             {
-                
+                type: 'input',
+                name: 'managerEmail',
+                message: "Please enter the team manager's email address",
+                validate: answer => {
+                    // add regular expression for validation
+                    const pass = answer.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/);
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter the team manager's email address";
+                }
+            },
+            {
+                type: 'input',
+                name: 'managerOfficeNumber',
+                message: "Please enter the team manager's office number",
+                // add regular expression for validation
+                validate: answer => {
+                    const pass = answer.match(/^[1-9]\d*$/);
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter the team manager's office number";
+                }
             }
-        ])
+            // answers function
+        ]).then(answers => {
+            
+        })
     }
 }
 
