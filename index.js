@@ -87,8 +87,33 @@ function appMenu() {
     }
     // createTeam function
     function createTeam() {
-        
+        // inquirer prompt here
+        inquirer.prompt ([
+            {
+                type: 'list',
+                name: 'memberChoice',
+                message: 'Add a team member',
+                choices: [
+                    'Engineer',
+                    'Intern',
+                    'Do not add a team member'
+                ]
+            }
+        // case based on user choice
+        ]).then(userChoice => {
+            switch (userChoice.memberChoice) {
+                case 'Engineer':
+                    addEngineer();
+                    break;
+                case 'Intern':
+                    addIntern();
+                    break;
+                default:
+                    buildTeam();
+            }
+        });
     }
+    
 }
 
 
