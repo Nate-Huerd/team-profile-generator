@@ -78,8 +78,16 @@ function appMenu() {
             }
             // answers function
         ]).then(answers => {
-            
-        })
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            // push to teamMembers and idArray
+            teamMembers.push(manager);
+            idArray.push(answers.managerId);
+            createTeam();
+        });
+    }
+    // createTeam function
+    function createTeam() {
+        
     }
 }
 
