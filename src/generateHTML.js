@@ -9,9 +9,9 @@ const generateTeam = team => {
                         <h4>Manager</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${manager.getId}</p>
-                        <p class="employee-email">Email: <a href="mailto:${manager.getEmail}">${manager.getEmail}</a></p>
-                        <p class="manager-office">Office #: ${manager.getOffice}</p>
+                        <li class="employee-id">${manager.getId}</li>
+                        <li class="employee-email">Email: <a href="mailto:${manager.getEmail}">${manager.getEmail}</a></li>
+                        <li class="manager-office">Office #: ${manager.getOffice}</li>
                     </div>
                 </div>
             </div>
@@ -27,9 +27,9 @@ const generateTeam = team => {
                         <h4>Engineer</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${engineer.getId}</p>
-                        <p class="employee-email">Email: <a href="mailto:${engineer.getEmail}">${engineer.getEmail}</a></p>
-                        <p class="engineer-github">GitHub: ${engineer.getGithub}</p>
+                        <li class="employee-id">${engineer.getId}</li>
+                        <li class="employee-email">Email: <a href="mailto:${engineer.getEmail}">${engineer.getEmail}</a></li>
+                        <li class="engineer-github">GitHub: ${engineer.getGithub}</li>
                     </div>
                 </div>
             </div>
@@ -45,9 +45,10 @@ const generateTeam = team => {
                         <h4>Intern</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${intern.getId}</p>
-                        <p class="employee-email">Email: <a href="mailto:${intern.getEmail}">${intern.getEmail}</a></p>
-                        <p class="intern-school">School: ${intern.getSchool}</p>
+                        <li class="employee-id">${intern.getId}</li>
+                        <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                        <li class="employee-email">Email: <a href="mailto:${intern.getEmail}">${intern.getEmail}</a></li>
+                        <li class="intern-school">School: ${intern.getSchool}</li>
                     </div>
                 </div>
             </div>
