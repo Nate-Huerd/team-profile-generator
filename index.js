@@ -9,7 +9,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // output directory
-const OUTPUT_DIR = path.resolve(__dirname, 'outpu')
+const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
 
 // render template
@@ -32,7 +32,7 @@ function appMenu() {
                 message: "Please enter the team manager's name",
                 validate: answer => {
                     if (answer !== "") {
-                        return true,
+                        return true;
                     }
                     return "Please list the team manager's name";
                 }
@@ -149,12 +149,101 @@ function appMenu() {
                 }
             },
             {
-                
+                type: 'input',
+                name: 'engineerGitHub',
+                message: "Please enter the engineer's GitHub",
+                validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter the engineer's GitHub";
+                  }
+                }
+                // push user input
+              ]).then(answers => {
+                const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+                teamMembers.push(engineer);
+                idArray.push(answers.engineerId);
+                createTeam();
+              });
             }
-        ])
-    }
+          
+            function addIntern() {
+              inquirer.prompt([
+                {
+                  type: 'input',
+                  name: 'internName',
+                  message: "Enter your intern's name?",
+                  validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter your intern's name";
+                  }
+                },
+                {
+                  type: 'input',
+                  name: 'internId',
+                  message: "What is your intern's id?",
+                  validate: answer => {
+                    const pass = answer.match(/^[1-9]\d*$/);
+                    if (pass) {
+                      if (idArray.includes(answer)) {
+                        return 'This ID is already taken';
+                      } else {
+                        return true;
+                      }
+          
+                    }
+                    return 'Please enter a valid ID';
+                  }
+                },
+                {
+                  type: 'input',
+                  name: 'internEmail',
+                  message: "What is your intern's email address?",
+                  validate: answer => {
+                    const pass = answer.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/);
+                    if (pass) {
+                      return true;
+                    }
+                    return 'Please enter a valid email address';
+                  }
+                },
+                {
+                  type: 'input',
+                  name: 'internSchool',
+                  message: "What is your intern's school?",
+                  validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter your intern's school";
+                  }
+                }
+              ]).then(answers => {
+                const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                teamMembers.push(intern);
+                idArray.push(answers.internId);
+                createTeam();
+              });
+            }
+          
+            function buildTeam() {
+              // Create the output directory if the output path doesn't exist
+              if (!fs.existsSync(OUTPUT_DIR)) {
+                fs.mkdirSync(OUTPUT_DIR)
+              }
+              // writeFileSync function
+              fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+            }
+          
+    createManager();
+          
 }
-
+          
+appMenu();
+          
 
 
 
