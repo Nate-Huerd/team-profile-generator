@@ -74,7 +74,6 @@ const generateTeam = team => {
 
     return html.join("");
 
-
 }
 
 // export the team and generate the HTML page
