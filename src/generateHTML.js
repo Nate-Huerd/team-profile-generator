@@ -5,13 +5,13 @@ const generateTeam = team => {
             <div class="container">
                 <div class="col-4">
                     <div class="card-header">
-                        <h3 class="employee-name">${manager.name}</h3>
+                        <h3 class="employee-name">${manager.getName}</h3>
                         <h4>Manager</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${manager.id}</p>
-                        <p class="employee-email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                        <p class="manager-office">Office #: ${manager.office}</p>
+                        <p class="employee-id">${manager.getId}</p>
+                        <p class="employee-email">Email: <a href="mailto:${manager.getEmail}">${manager.getEmail}</a></p>
+                        <p class="manager-office">Office #: ${manager.getOffice}</p>
                     </div>
                 </div>
             </div>
@@ -23,13 +23,13 @@ const generateTeam = team => {
             <div class="container">
                 <div class="col-4">
                     <div class="card-header">
-                        <h3 class="employee-name">${engineer.name}</h3>
+                        <h3 class="employee-name">${engineer.getName}</h3>
                         <h4>Engineer</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${engineer.id}</p>
-                        <p class="employee-email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                        <p class="engineer-github">GitHub: ${engineer.github}</p>
+                        <p class="employee-id">${engineer.getId}</p>
+                        <p class="employee-email">Email: <a href="mailto:${engineer.getEmail}">${engineer.getEmail}</a></p>
+                        <p class="engineer-github">GitHub: ${engineer.getGithub}</p>
                     </div>
                 </div>
             </div>
@@ -41,18 +41,39 @@ const generateTeam = team => {
             <div class="container">
                 <div class="col-4">
                     <div class="card-header">
-                        <h3 class="employee-name">${intern.name}</h3>
+                        <h3 class="employee-name">${intern.getName}</h3>
                         <h4>Intern</h4>
                     </div>
                     <div class="card-body">
-                        <p class="employee-id">${intern.id}</p>
-                        <p class="employee-email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                        <p class="intern-school">School: ${intern.school}</p>
+                        <p class="employee-id">${intern.getId}</p>
+                        <p class="employee-email">Email: <a href="mailto:${intern.getEmail}">${intern.getEmail}</a></p>
+                        <p class="intern-school">School: ${intern.getSchool}</p>
                     </div>
                 </div>
             </div>
         `;
     };
+    // need to push to the template Manager, Engineer, and Employee, then join them
+    const html = [];
+
+    html.push(team
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
+
+    return html.join("");
+
+
 }
 
 // export the team and generate the HTML page

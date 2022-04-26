@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Nate-Huerd/team-profile-generator#readme",
   "devDependencies": {
     "jest": "^28.0.1"
+  },
+  "dependencies": {
+    "node": "^17.7.2"
   }
 }
