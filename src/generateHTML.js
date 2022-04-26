@@ -46,7 +46,6 @@ const generateTeam = team => {
                     </div>
                     <div class="card-body">
                         <li class="employee-id">${intern.getId}</li>
-                        <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
                         <li class="employee-email">Email: <a href="mailto:${intern.getEmail}">${intern.getEmail}</a></li>
                         <li class="intern-school">School: ${intern.getSchool}</li>
                     </div>
@@ -72,7 +71,7 @@ const generateTeam = team => {
         .join("")
     );
 
-    // join
+    //
     return html.join("");
 
 }
